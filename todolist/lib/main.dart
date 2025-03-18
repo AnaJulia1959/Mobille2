@@ -9,20 +9,22 @@ void main() {
   final taskDao = TaskDao();
   final repository = TaskRepository(taskDao: taskDao);
   runApp(
-    ChangeNotifierProvider(create: (_) => TaskViewModel(repository: repository),
-    child: MyApp (),
+    ChangeNotifierProvider(
+      create: (_) => TaskViewModel(repository: repository),
+      child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp ({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(title: 'todo list',
-    debugShowCheckedModeBanner: false,
-    home: HomeScreen());
+    return MaterialApp(
+        title: 'todo list',
+        debugShowCheckedModeBanner: false,
+        home: HomeScreen());
   }
-} template
+}
